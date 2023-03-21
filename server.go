@@ -51,7 +51,7 @@ func process(w http.ResponseWriter, r *http.Request) {
 			"relations": relationsunm,
 			"dates":     datesunm,
 		}
-		t := template.Must(template.ParseFiles(("groupietracker.html")))
+		t := template.Must(template.ParseFiles(("./templates/groupietracker.html")))
 
 		t.Execute(w, all)
 
@@ -71,7 +71,7 @@ func process(w http.ResponseWriter, r *http.Request) {
 
 		all := Artistinfo{Artist: artistunm[numID-1], Location: locationsunm.Index[numID-1], Dates: dates, Relation: relationsunm.Index[numID-1]}
 
-		t := template.Must(template.ParseFiles("artistinfo.html"))
+		t := template.Must(template.ParseFiles("./templates/artistinfo.html"))
 
 		t.Execute(w, all)
 
